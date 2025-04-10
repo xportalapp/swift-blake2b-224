@@ -4,8 +4,7 @@ import Blake2bC
 public struct Blake2b {
     public init() {}
     
-    public func computeHash(_ input: [UInt8]) -> [UInt8] {
-        let capacity = 28
+    public func computeHash(_ input: [UInt8], capacity: Int = 28) -> [UInt8] {
         let inputPointer = UnsafeMutablePointer<UInt8>.allocate(capacity: input.count)
         let output = UnsafeMutablePointer<UInt8>.allocate(capacity: capacity)
         var pkCopy: [UInt8] = Array(repeating: 0, count: capacity)
